@@ -1,32 +1,50 @@
-
-
-// Add event listener to 'Add Employees' button
-addEmployeesBtn.addEventListener('click', trackEmployeeData);
-
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn'); //this says when they clicks the add employess button, make something happen
 
-
-
+let employeesArray= []
 // Collect employee data
 const collectEmployees = function() {
-  // TODO: Get user input to create and return an array of employee objects
+  let firstNameInput= prompt("Enter first name of employee")
+  let lastNameInput= prompt ("Enter last name of employee")
+  let salaryInput= prompt ("Enter salary")
+
+  let employee= {
+    firstName: firstNameInput, 
+    lastName: lastNameInput,
+    salary: salaryInput
+}   //This is a user created object
+
+employeesArray.push(employee)
+
+return employeesArray
+console.log (displayAverageSalary(salaryArray))
 }
+
+
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
+  let array = 0;
+  for (let i = 0; i < employeesArray.length; i++) {
+    array += employeesArray [i];
+  }
+return array/employeesArray.length
 }
+
+let salaryArray = employeesArray.map(e=> {
+  return + e.salary
+  })
+
+
+
+
+
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
 }
-
-
-
-
-
 
 /*
   ====================
@@ -69,6 +87,19 @@ const displayEmployees = function(employeesArray) {
   }
 }
 
+// displayEmployees([
+//   {
+//   firstName: "Sally",
+//   lastName: "Smith",
+//   salary: 55000 
+// },
+// {
+//   firstName: "Sally",
+//   lastName: "Smith",
+//   salary: 55000 
+// },
+// ])
+
 const trackEmployeeData = function() {
   const employees = collectEmployees();
 
@@ -91,8 +122,9 @@ const trackEmployeeData = function() {
   displayEmployees(employees);
 }
 
+// Add event listener to 'Add Employees' button
+addEmployeesBtn.addEventListener('click', trackEmployeeData);
 
 
 
-
-
+// git remote add origin https://github.com/magtron3030/employee.salary.doc.git
