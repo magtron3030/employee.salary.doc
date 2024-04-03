@@ -25,18 +25,12 @@ console.log (displayAverageSalary(salaryArray))
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
-  let array = 0;
+  let totalSalaries = 0;
   for (let i = 0; i < employeesArray.length; i++) {
-    array += employeesArray [i];
+    totalSalaries += parseInt(employeesArray[i].salary);
   }
-return array/employeesArray.length
+  return totalSalaries/employeesArray.length
 }
-
-let salaryArray = employeesArray.map(e=> {
-  return + e.salary
-  })
-
-
 
 
 
@@ -44,6 +38,8 @@ let salaryArray = employeesArray.map(e=> {
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
+  const random = Math.floor(Math.random(),  employeesArray.length);
+  console.log("Congratulations to $() You're the winner!" , employeesArray[random]);
 }
 
 /*
@@ -87,27 +83,16 @@ const displayEmployees = function(employeesArray) {
   }
 }
 
-// displayEmployees([
-//   {
-//   firstName: "Sally",
-//   lastName: "Smith",
-//   salary: 55000 
-// },
-// {
-//   firstName: "Sally",
-//   lastName: "Smith",
-//   salary: 55000 
-// },
-// ])
 
 const trackEmployeeData = function() {
   const employees = collectEmployees();
 
   console.table(employees);
 
-  displayAverageSalary(employees);
+  const avgSalary = displayAverageSalary(employees);
 
   console.log('==============================');
+  console.log(avgSalary)
 
   getRandomEmployee(employees);
 
@@ -127,4 +112,3 @@ addEmployeesBtn.addEventListener('click', trackEmployeeData);
 
 
 
-// git remote add origin https://github.com/magtron3030/employee.salary.doc.git
