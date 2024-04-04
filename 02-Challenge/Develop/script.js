@@ -23,15 +23,14 @@ console.log (displayAverageSalary(salaryArray))
 
 
 // Display the average salary
-const displayAverageSalary = function(employeesArray) {
+const displayAverageSalary = function (employeesArray) {
   // TODO: Calculate and display the average salary
-  
   let totalSalaries = 0;
   for (let i = 0; i < employeesArray.length; i++) {
     totalSalaries += parseInt(employeesArray[i].salary);
   }
   return totalSalaries/employeesArray.length
-}
+  }
 
 
 
