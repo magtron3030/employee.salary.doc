@@ -75,10 +75,12 @@ const displayEmployees = function(employeesArray) {
 
     const salaryCell = document.createElement("td");
     // Format the salary as currency
-    salaryCell.textContent = currentEmployee.salary.toLocaleString("en-US",{
-      style:"currency",
-      currency:"USD"
-    });
+
+    salaryCell.textContent = "$" + currentEmployee.salary
+    // salaryCell.textContent = currentEmployee.salary.toLocaleString("en-US",{
+    //   style:"currency",
+    //   currency:"USD"
+    // });
 
     newTableRow.append(salaryCell);
 
