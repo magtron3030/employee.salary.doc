@@ -1,14 +1,14 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn'); //this says when they clicks the add employess button, make something happen
 
-let employeesArray= []
+let employeesArray = []
 // Collect employee data
 const collectEmployees = function() {
   let firstNameInput= prompt("Enter first name of employee")
   let lastNameInput= prompt ("Enter last name of employee")
   let salaryInput= prompt ("Enter salary")
 
-  let employee= {
+  let employee = {
     firstName: firstNameInput, 
     lastName: lastNameInput,
     salary: salaryInput
@@ -25,6 +25,7 @@ console.log (displayAverageSalary(salaryArray))
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
+  
   let totalSalaries = 0;
   for (let i = 0; i < employeesArray.length; i++) {
     totalSalaries += parseInt(employeesArray[i].salary);
@@ -36,11 +37,14 @@ const displayAverageSalary = function(employeesArray) {
 
 
 // Select a random employee
-const getRandomEmployee = function(employeesArray) {
-  // TODO: Select and display a random employee
-  const random = Math.floor(Math.random(),  employeesArray.length);
-  console.log("Congratulations to $() You're the winner!" , employeesArray[random]);
+
+  const getRandomEmployee = function(employeesArray) {
+  const random = employeesArray [Math.floor(Math.random() * employeesArray.length)];
+
+  console.log(`Congratulations to ${random.firstName} ${random.lastName} for winning unlimted cheese sticks for the rest of your life!`)
 }
+
+
 
 /*
   ====================
